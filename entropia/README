@@ -1,0 +1,9 @@
+This is the entropia "adventure". It show the usage of adventure QR
+codes.  They are created for an adventure and are meant to be placed
+in the physical world. You can create them by clicking on the
+"Adventure QR codes" tab on the adventure edit screen.
+
+This adventure consist of 4 QR codes hidden in a local hackerspace
+(entropia.de).  Players try to find all 4 QR codes using the hints
+provided. Once a player has scanned all of them, a victory message
+is displayed.
