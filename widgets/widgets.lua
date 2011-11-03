@@ -87,6 +87,7 @@ function show_places(player_id, input_value)
 end
 
 function show_qrcode(player_id, place)
+    local clicked_qr = false
     selected_place = place -- save globally for the compass widget
 
     geo.ui.clear(player_id)
@@ -103,6 +104,21 @@ function show_qrcode(player_id, place)
     ]])
     geo.ui.append(player_id, geo.widget.qrcode{
         onScanned = function(event)
+            if event.medium == "click" then
+                if clicked_qr then return end
+                clicked_qr = true
+                geo.ui.append(player_id, geo.widget.text[[
+                    You clicked the QR code. To see the multiplayer
+                    interaction, you must scan it. 
+                ]])
+                geo.ui.append(player_id, geo.widget.button{
+                    text = "Skip QR widget";
+                    onClick = function(event)
+                        show_compass(player_id)
+                    end
+                })
+                return
+            end
             show_phone_ui(event.scan_player_id, player_id)
             geo.ui.clear(player_id)
             geo.ui.append(player_id, geo.widget.text[[
