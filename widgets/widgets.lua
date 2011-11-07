@@ -84,6 +84,7 @@ function show_places(player_id, input_value)
             end;
         }}
     })
+    geo.feature.gps(player_id, true)
 end
 
 function show_qrcode(player_id, place)
