@@ -47,12 +47,16 @@ function add_hints(player_id)
 end
 
 function completed(player_id)
+    geo.game.badge(player_id, 34)
     geo.ui.clear(player_id)
     geo.ui.append(player_id, geo.widget.text[[
         = EPIC WIN
         Du hast alle gefunden.
         Gute Arbeit!
-        {{http://4.bp.blogspot.com/-eLTwMd5jQZ0/TnoO5nUEqpI/AAAAAAAADP4/tjI84UJnOoI/s1600/YouAreAwesome.jpg}}
+
+        Hier ist dein Badge!
+
+        <<badge(34)>>
     ]])
 end
 
